@@ -1,7 +1,7 @@
 import React from 'react';
-import { Navbaris } from './navbaris';
-import './About.css'
-import { Appy } from './SelectCountry';
+import { Navbaris } from './components/navbaris';
+import './designs/About.css'
+import { Appy } from './components/SelectCountry';
 
 export const Select: React.FC = () => {
     return (

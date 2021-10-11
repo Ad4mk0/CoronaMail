@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
+    "mailer": "ts-node src/nodemailer.ts",
     "migrate": "prisma migrate dev  --preview-feature"
   },
   "repository": {
@@ -19,11 +20,18 @@
   "homepage": "https://github.com/DominikLa/ElasticSearchApp#readme",
   "dependencies": {
     "@prisma/client": "^2.17.0",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
     "express": "^4.17.1",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.5.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.5"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.10",
     "@types/elasticsearch": "^5.0.37",
     "@types/express": "^4.17.11",
     "prisma": "^2.17.0",

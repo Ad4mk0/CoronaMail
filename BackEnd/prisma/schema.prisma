@@ -12,3 +12,13 @@ model User {
   email String  @unique
   country String
 }
+
+
+model CountryNumbers {
+  id  Int @id @default(autoincrement())
+  country String
+  confirmed Int
+  deaths   Int
+  recovered Int
+  date DateTime @db.Date
+}

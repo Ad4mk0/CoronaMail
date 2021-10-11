@@ -1,17 +1,17 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { useRouteMatch } from 'react-router'
 import { Link } from 'react-router-dom'
-import { StringLiteral } from 'typescript';
 import { useAppState } from './appState'
-import './navbaris.css'
+import '../designs/navbaris.css'
+
 
 
 export const Navbaris: React.FC = () => {
   const route: {params: {page: string}} = useRouteMatch('/:page') || { params: { page: '' } }
-  console.log(route)
+  //console.log(route)
   const activeRoute = route.params.page
-  console.log(activeRoute)
+  //console.log(activeRoute)
 
   function getActiveRouteStyle(navRouteName: string) {
     if (navRouteName === activeRoute) {
@@ -34,14 +34,14 @@ export const Navbaris: React.FC = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link style={getActiveRouteStyle('select')}><Link to="/select">Select Country</Link></Nav.Link>
-          <Nav.Link style={getActiveRouteStyle('besafe')}><Link to="/besafe">be safe!</Link></Nav.Link>
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+          <Nav.Link style={getActiveRouteStyle('besafe')}><Link to="/besafe">Be safe!</Link></Nav.Link>
+          {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
         </Nav>
         <Nav>
           <Nav.Link style={getActiveRouteStyle('about')}><Link to="/about">About</Link>

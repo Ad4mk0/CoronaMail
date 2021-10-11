@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import img1 from './3907960.jpg'
-import img2 from './3676640.jpg';
-import img3 from './5474.jpg'
-import './compo.css'
-import {useAppState} from './appState'
+import img1 from '../images/3907960.jpg';
+import img2 from '../images/3676640.jpg';
+import img3 from '../images/5474.jpg';
+import '../designs/compo.css';
+
+import {useAppState} from './appState';
 
 import CardColumns from 'react-bootstrap/CardColumns';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
 
 export type CoronaApiData = {
   deaths: number,
@@ -29,12 +30,13 @@ export const Daticka: React.FC = () => {
   
 
   useEffect(() => {
-    console.log(selectedCountry)
+    //console.log(selectedCountry)
     const corApi = 'https://coronavirus-tracker-api.herokuapp.com/v2/locations?country='
-    axios.get(corApi.concat(selectedCountry), {headers: { 'Content-Type': 'application/json'}})
+    //{headers: { 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*"}}
+    axios.get(corApi.concat(selectedCountry), {headers: { 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*"}})
       .then((data) => {
       setCoroData(data.data.latest as CoronaApiData)
-      console.log('hadi prdi')
+      //console.log('hadi prdi')
       })},[selectedCountry]);
 
 
@@ -55,7 +57,7 @@ export const MyComponent: React.FC<{
   coroData: CoronaApiData,
 
 }> = ({selectedCountry,coroData}) => { 
-  console.log(coroData)
+  //console.log(coroData)
   return <>
     <div className="haha">
     <CardColumns>
@@ -72,9 +74,9 @@ export const MyComponent: React.FC<{
   <Card>
     <Card.Img variant="top" src={img2} />
     <Card.Body>
-      <Card.Title>Inficated</Card.Title>
+      <Card.Title>Infected</Card.Title>
       <Card.Text>
-        Number of total infications in {selectedCountry} are {coroData.confirmed}.
+        Number of total infections in {selectedCountry} are {coroData.confirmed}.
       </Card.Text>
     </Card.Body>
   </Card>
