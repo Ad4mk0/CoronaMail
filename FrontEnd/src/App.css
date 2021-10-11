@@ -1,0 +1,23 @@
+#root{
+    height: 100%;
+  }
+  
+.App{
+height: 100%;
+
+}
+/* .hm{
+  position: absolute;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 15%;
+  border: solid azure 5px} */
+  
+.Form1{
+    position: absolute;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 15%;
+    border: solid lime 5px
+
+}

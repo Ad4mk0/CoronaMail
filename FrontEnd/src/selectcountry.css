@@ -1,0 +1,34 @@
+.makak {
+    /* position: center;
+    margin-left: 30px;
+    margin-right: auto;
+    
+    max-height: 180px;
+    
+    overflow: auto; */
+    
+
+    width: 200px;
+    /* margin-top: 5%; */
+}
+
+/* .headder{
+    margin-top: 10%;
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+} */
+
+.inputgrup{
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 20px;
+    width: 60%;
+}
+
+.mojMalyPesTobi{
+    margin-top: -40px;
+}

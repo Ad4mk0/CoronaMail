@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-end-deployment
+  namespace: corona-mail
+  labels:
+    app: front-end
+spec:
+  selector:
+    matchLabels:
+      app: front-end
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: front-end
+    spec:
+      containers:
+        - name: front-end
+          image: dominikla/corona-mail-ui
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-end-service
+  namespace: corona-mail
+  annotations:
+    service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
+spec:
+  selector:
+    app: front-end
+  type: LoadBalancer  
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
